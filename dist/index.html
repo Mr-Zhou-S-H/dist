@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html * {
+      margin: 0;
+      padding: 0;
+    }
+    html, body {padding:0;margin:0}
+    canvas {
+      display:block;
+      position: fixed;
+      z-index: -1;
+    }
+    .layout {
+      margin-top: 20px;
+    }
+    .layout article div {
+      min-height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <canvas></canvas>
+  <section class="layout float">
+    <article class="left-right-center">
+      <style>
+        .layout.float .left {
+          float: left;
+          width: 300px;
+          background-color: red;
+        }
+        .layout.float .right {
+          float: right;
+          width: 300px;
+          background-color: red;
+        }
+        .layout.float .center {
+          background-color: blue;
+        }
+      </style>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        <h1>浮动解决方案</h1>
+        这是三栏布局中间部分
+      </div>
+    </article>
+  </section>
+  <section class="layout absolute">
+    <style>
+        .layout.absolute {
+          position: relative;
+        }
+        .layout.absolute .left-right-center>div {
+          position: absolute;
+        }
+        .left-right-center .left {
+          left: 0;
+          width: 300px;
+          background-color: pink;
+        }
+        .left-right-center .right {
+          right: 0;
+          width: 300px;
+          background-color: pink;
+        }
+        .left-right-center .center {
+          left: 300px;
+          right: 300px;
+          background-color: skyblue;
+        }
+    </style>
+    <article class="left-right-center">
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+          <h1>定位解决方案</h1>
+          这是三栏布局中间部分
+        </div>
+    </article>
+  </section>
+  <section class="layout flexbox">
+    <style>
+      .layout.flexbox {
+        margin-top: 140px;
+      }
+      .layout.flexbox .left-right-center {
+        display: flex;
+      }
+      .layout.flexbox .left {
+        width: 300px;
+        background-color: red;
+      }
+      .layout.flexbox .right {
+        width: 300px;
+        background-color: blue;
+      }
+      .layout.flexbox .center {
+        flex: 1;
+        background-color: rgb(32, 173, 86);
+      }
+    </style>
+    <article class="left-right-center">
+      <div class="left"></div>
+      <div class="center">
+          <h1>flex解决方案</h1>
+          这是三栏布局中间部分
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+</body>
+</html>
